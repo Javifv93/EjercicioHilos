@@ -1,0 +1,107 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.SwingConstants;
+
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+
+public class MenuCarrera {
+
+	private JFrame frame;
+	private JTextField txtHilo;
+	private JTextField txtHilo_1;
+	private JTextField txtHilo_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MenuCarrera window = new MenuCarrera();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MenuCarrera() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 443, 402);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnComenzar = new JButton("Comenzar Carrera");
+		btnComenzar.setToolTipText("Pulsa para comenzar");
+		btnComenzar.setBounds(132, 28, 155, 23);
+		frame.getContentPane().add(btnComenzar);
+		
+		JProgressBar pbHilo1 = new JProgressBar();
+		pbHilo1.setBounds(10, 86, 407, 14);
+		frame.getContentPane().add(pbHilo1);
+		
+		JProgressBar pbHilo2 = new JProgressBar();
+		pbHilo2.setBounds(10, 148, 407, 14);
+		frame.getContentPane().add(pbHilo2);
+		
+		JProgressBar pbHilo3 = new JProgressBar();
+		pbHilo3.setBounds(10, 233, 407, 14);
+		frame.getContentPane().add(pbHilo3);
+		
+		JSlider slHilo1 = new JSlider();
+		slHilo1.setBounds(98, 111, 227, 26);
+		frame.getContentPane().add(slHilo1);
+		
+		JSlider slHilo2 = new JSlider();
+		slHilo2.setBounds(98, 184, 227, 26);
+		frame.getContentPane().add(slHilo2);
+		
+		JSlider slHilo3 = new JSlider();
+		slHilo3.setBounds(98, 268, 227, 26);
+		frame.getContentPane().add(slHilo3);
+		
+		txtHilo = new JTextField();
+		txtHilo.setText("Hilo1");
+		txtHilo.setHorizontalAlignment(SwingConstants.CENTER);
+		txtHilo.setEditable(false);
+		txtHilo.setBounds(21, 336, 86, 20);
+		frame.getContentPane().add(txtHilo);
+		txtHilo.setColumns(10);
+		
+		txtHilo_1 = new JTextField();
+		txtHilo_1.setText("Hilo2");
+		txtHilo_1.setHorizontalAlignment(SwingConstants.CENTER);
+		txtHilo_1.setEditable(false);
+		txtHilo_1.setColumns(10);
+		txtHilo_1.setBounds(155, 336, 86, 20);
+		frame.getContentPane().add(txtHilo_1);
+		
+		txtHilo_2 = new JTextField();
+		txtHilo_2.setText("Hilo3");
+		txtHilo_2.setHorizontalAlignment(SwingConstants.CENTER);
+		txtHilo_2.setEditable(false);
+		txtHilo_2.setColumns(10);
+		txtHilo_2.setBounds(302, 336, 86, 20);
+		frame.getContentPane().add(txtHilo_2);
+		
+	}
+}
